@@ -21,4 +21,9 @@ public class TestController {
         System.out.println(testService.test());
         return "index";
     }
+    @RequestMapping(value = {"/home"},method = RequestMethod.GET)
+    public String home(){
+        System.out.println(testService.test());
+        return "public/home";
+    }
 }
