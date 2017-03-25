@@ -24,13 +24,11 @@
     <!--HandlerMapping 无需配置，springmvc可以默认启动-->
 
     <!--静态资源映射-->
-  <!--  <mvc:resources mapping="/css/**" location="/WEB-INF/statics/css/"/>
-    <mvc:resources mapping="/js/**" location="/WEB-INF/statics/js/"/>
-    <mvc:resources mapping="/images/**" location="/WEB-INF/statics/images/"/>
-    <mvc:resources mapping="/fonts/**" location="/WEB-INF/statics/fonts/"/>
-    <mvc:resources mapping="/font-awesome/**" location="/WEB-INF/statics/font-awesome/"/>
-    <mvc:resources mapping="/sass/**" location="/WEB-INF/statics/sass/"/>-->
-
+    <mvc:resources mapping="/css/**" location="/WEB-INF/static/css/"/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/static/js/"/>
+    <mvc:resources mapping="/images/**" location="/WEB-INF/static/images/"/>
+    <mvc:resources mapping="/assets/**" location="/WEB-INF/static/assets/"/>
+    <mvc:resources mapping="/basic/**" location="/WEB-INF/static/basic/"/>
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
     <mvc:annotation-driven/>
 
