@@ -44,39 +44,39 @@
 
                 <div class="am-tabs-bd">
                     <div class="am-tab-panel am-active">
-                        <form method="post">
+                        <form id="form1" action="/user/register" method="post">
 
                             <div class="user-email">
                                 <label for="email"><i class="am-icon-envelope-o"></i></label>
-                                <input type="email" name="" id="email" placeholder="请输入邮箱账号">
+                                <input type="email" name="user_email" id="email" placeholder="请输入邮箱账号">
                             </div>
                             <div class="user-pass">
                                 <label for="password"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="password" placeholder="设置密码">
+                                <input type="password" name="user_pwd" id="password_e" placeholder="设置密码">
                             </div>
                             <div class="user-pass">
                                 <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="passwordRepeat" placeholder="确认密码">
+                                <input type="password" name="" id="passwordRepeat_e" placeholder="确认密码">
                             </div>
 
                         </form>
 
                         <div class="login-links">
                             <label for="reader-me">
-                                <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
+                                <input id="reader-me-e" type="checkbox"> 点击表示您同意商城《服务协议》
                             </label>
                         </div>
                         <div class="am-cf">
-                            <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                            <input type="submit" name="" onclick="commit('form1');" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
 
                     </div>
 
                     <div class="am-tab-panel">
-                        <form method="post">
+                        <form id="form2" action="/user/register" method="post">
                             <div class="user-phone">
                                 <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
-                                <input type="tel" name="" id="phone" placeholder="请输入手机号">
+                                <input type="tel" name="user_phone" id="phone" placeholder="请输入手机号">
                             </div>
                             <div class="verification">
                                 <label for="code"><i class="am-icon-code-fork"></i></label>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="user-pass">
                                 <label for="password"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="password" placeholder="设置密码">
+                                <input type="password" name="user_pwd" id="password" placeholder="设置密码">
                             </div>
                             <div class="user-pass">
                                 <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
@@ -99,7 +99,7 @@
                             </label>
                         </div>
                         <div class="am-cf">
-                            <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                            <input type="submit" name=""  onclick="commit('form2');" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
 
                         <hr>
@@ -108,7 +108,21 @@
                     <script>
                         $(function() {
                             $('#doc-my-tabs').tabs();
-                        })
+
+                            var status = '${status}';
+                            if(status!="") {
+                                if (status)
+                                    alert("注册成功");
+                                else
+                                    alert("注册失败");
+                            }
+                        });
+                        function commit(type) {
+                            if(type=='form1')
+                                $('#form1').submit();
+                            else
+                                $('#form2').submit();
+                        }
                     </script>
 
                 </div>

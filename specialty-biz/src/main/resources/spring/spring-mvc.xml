@@ -9,19 +9,12 @@
                         http://www.springframework.org/schema/context/spring-context-3.2.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <!--启用spring的一些annotation -->
-    <context:annotation-config/>
-    <!-- 默认的注解映射的支持 -->
-    <mvc:annotation-driven />
-    <!--启用自动扫描  -->
-    <context:component-scan base-package="com.java.mapper" />
+    <!-- 1、配置映射器与适配器 -->
+    <mvc:annotation-driven/>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.java.controller">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
-    <!-- Managers: For accessing Services -->
-    <context:component-scan base-package="com.java.service" />
-    <!--HandlerMapping 无需配置，springmvc可以默认启动-->
+    <context:component-scan base-package="com.java.controller"/>
+    <!-- 注，此处自动扫描注解的时候，不去扫描Controller-->
+    <context:component-scan base-package="com.java.service.impl"/>
 
     <!--静态资源映射-->
     <mvc:resources mapping="/css/**" location="/WEB-INF/static/css/"/>
@@ -30,7 +23,6 @@
     <mvc:resources mapping="/assets/**" location="/WEB-INF/static/assets/"/>
     <mvc:resources mapping="/basic/**" location="/WEB-INF/static/basic/"/>
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
-    <mvc:annotation-driven/>
 
     <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀(如果最后一个还是表示文件夹,则最后的斜杠不要漏了) 使用JSP-->
     <!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->

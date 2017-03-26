@@ -5,20 +5,9 @@
          version="3.1">
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/spring-mvc.xml</param-value>
+    <param-value>classpath:spring/spring-mybatis.xml</param-value>
   </context-param>
-  <context-param>
-    <param-name/>
-    <param-value/>
-  </context-param>
-  <context-param>
-    <param-name/>
-    <param-value/>
-  </context-param>
-  <context-param>
-    <param-name/>
-    <param-value/>
-  </context-param>
+
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
@@ -27,7 +16,7 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/dispatcher-servlet.xml</param-value>
+      <param-value>classpath:spring/spring-mvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
