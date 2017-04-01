@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!--菜单 -->
 <div class=tip>
     <div id="sidebar">
@@ -19,7 +19,13 @@
                     <div class="avatar_box ">
                         <p class="avatar_imgbox "><img src="/images/no-img_mid_.jpg " /></p>
                         <ul class="user_info ">
-                            <li>用户名：sl1903</li>
+                            <li>
+                                用户名：
+                                <c:if test="${empty user.user_name}">${user.user_id}</c:if>
+                                <c:if test="${! empty user.user_name}">${user.user_name}</c:if>
+                                <%--<c:if test="${! empty user.user_email}">${user.user_email}</c:if>
+                                <c:if test="${! empty user.user_phone}">${user.user_phone}</c:if>--%>
+                            </li>
                             <li>级&nbsp;别：普通会员</li>
                         </ul>
                     </div>

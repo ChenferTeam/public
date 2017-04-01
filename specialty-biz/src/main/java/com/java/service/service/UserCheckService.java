@@ -23,4 +23,11 @@ public interface UserCheckService {
      * @return
      */
     Integer register(UserCheck userCheck);
+    /**
+     * 登录
+     * @param userName
+     * @param userPwd
+     * @return
+     */
+    UserCheck login(String userName,String userPwd);
 }

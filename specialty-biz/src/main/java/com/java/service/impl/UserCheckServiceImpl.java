@@ -40,4 +40,13 @@ public class UserCheckServiceImpl implements UserCheckService {
         userCheck.setUser_id(Generate.generateUserId());
         return this.add(userCheck);
     }
+    /**
+     * 登录
+     * @param userName
+     * @param userPwd
+     * @return
+     */
+    public UserCheck login(String userName,String userPwd){
+        return userCheckMapper.login(userName,userPwd);
+    }
 }

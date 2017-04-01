@@ -33,10 +33,11 @@
 
 <div class="res-banner">
     <div class="res-main">
-        <div class="login-banner-bg"><span></span><img src="../images/big.jpg" /></div>
+        <div class="login-banner-bg"><span></span><img src="/images/big.jpg" /></div>
         <div class="login-box">
 
             <div class="am-tabs" id="doc-my-tabs">
+
                 <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
                     <li class="am-active"><a href="">邮箱注册</a></li>
                     <li><a href="">手机号注册</a></li>
@@ -69,7 +70,9 @@
                         <div class="am-cf">
                             <input type="submit" name="" onclick="commit('form1');" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
-
+                        <div class="am-cf">
+                            <input type="submit" name=""  onclick="location.href='/user/to_login';" value="去登录" class="am-btn am-btn-sm am-fl">
+                        </div>
                     </div>
 
                     <div class="am-tab-panel">
@@ -98,39 +101,36 @@
                                 <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
                             </label>
                         </div>
-                        <div class="am-cf">
+                        <div class="am-cf" style="margin-bottom: 5px;">
                             <input type="submit" name=""  onclick="commit('form2');" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
-
-                        <hr>
+                        <div class="am-cf" style="margin-top: 5px;">
+                            <input type="submit" name=""  onclick="location.href='/user/to_login';" value="去登录" class="am-btn am-btn-sm am-fl">
+                        </div>
                     </div>
-
-                    <script>
-                        $(function() {
-                            $('#doc-my-tabs').tabs();
-
-                            var status = '${status}';
-                            if(status!="") {
-                                if (status)
-                                    alert("注册成功");
-                                else
-                                    alert("注册失败");
-                            }
-                        });
-                        function commit(type) {
-                            if(type=='form1')
-                                $('#form1').submit();
-                            else
-                                $('#form2').submit();
-                        }
-                    </script>
-
                 </div>
             </div>
-
         </div>
     </div>
     </div>
-</body>
+<script type="text/javascript">
+    $(function() {
+        $('#doc-my-tabs').tabs();
 
+        var status = '${status}';
+        if(status!="") {
+            if (status)
+                alert("注册成功");
+            else
+                alert("注册失败");
+        }
+    });
+    function commit(type) {
+        if(type=='form1')
+            $('#form1').submit();
+        else
+            $('#form2').submit();
+    }
+</script>
+</body>
 </html>

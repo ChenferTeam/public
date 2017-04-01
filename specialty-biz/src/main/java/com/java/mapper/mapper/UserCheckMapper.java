@@ -1,6 +1,7 @@
 package com.java.mapper.mapper;
 
 import com.java.model.UserCheck;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,13 @@ public interface UserCheckMapper {
      * 查询
      */
     List<UserCheck> find(UserCheck userCheck);
+
+    /**
+     * 登录
+     * @param userName
+     * @param userPwd
+     * @return
+     */
+    UserCheck login(@Param("userName") String userName,@Param("userPwd")String userPwd);
+
 }

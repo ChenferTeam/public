@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -33,8 +34,20 @@
         <ul class="message-l">
             <div class="topMessage">
                 <div class="menu-hd">
-                    <a href="#" target="_top" class="h">亲，请登录</a>
-                    <a href="#" target="_top">免费注册</a>
+                    <c:if test="${empty user}">
+                        <a href="/user/to_login" target="_top" class="h">亲，请登录</a>
+                        <a href="/user/to_register" target="_top">免费注册</a>
+                    </c:if>
+                    <c:if test="${!empty user}">
+                        <a href="#" target="_top" class="h">欢迎你！亲：
+                            <label>
+                                <c:if test="${! empty user.user_name}">${user.user_name}</c:if>
+                                <c:if test="${empty user.user_name}">${user.user_id}</c:if>
+                                <c:if test="${! empty user.user_email}">|${user.user_email}</c:if>
+                                <c:if test="${! empty user.user_phone}">|${user.user_phone}</c:if>
+                            </label>
+                        </a>
+                    </c:if>
                 </div>
             </div>
         </ul>
@@ -1029,25 +1042,6 @@
         <div class="clear"></div>
 
     </div>
-
-
-
-    <script type="text/javascript">
-        if ($(window).width() < 640) {
-            function autoScroll(obj) {
-                $(obj).find("ul").animate({
-                    marginTop: "-39px"
-                }, 500, function() {
-                    $(this).css({
-                        marginTop: "0px"
-                    }).find("li:first").appendTo(this);
-                })
-            }
-            $(function() {
-                setInterval('autoScroll(".demo")', 3000);
-            })
-        }
-    </script>
 </div>
 <div class="shopMainbg">
     <div class="shopMain" id="shopmain">
@@ -2511,9 +2505,21 @@
 
 <!--菜单 -->
 <jsp:include page="common/right.jsp"/>
-
-<script>
-    window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
+<script type="text/javascript">
+    if ($(window).width() &gt; 640) {
+        function autoScroll(obj) {
+            $(obj).find("ul").animate({
+                marginTop: "-39px"
+            }, 500, function() {
+                $(this).css({
+                    marginTop: "0px"
+                }).find("li:first").appendTo(this);
+            })
+        }
+        $(function() {
+            setInterval('autoScroll(".demo")', 3000);
+        })
+    }
 </script>
 <script type="text/javascript " src="/basic/js/quick_links.js "></script>
 </body>

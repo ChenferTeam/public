@@ -36,4 +36,19 @@ public class UserCheckController {
             model.addAttribute("status",true);
         return "person/register";
     }
+    //跳转登录页面
+    @RequestMapping(value = {"/to_login"})
+    public String toLogin(){
+        return "person/login";
+    }
+    //登录
+    @RequestMapping(value = {"/login"},method = RequestMethod.POST)
+    public String login(String userName,String userPwd, Model model, HttpServletRequest request, HttpServletResponse response){
+
+        UserCheck userCheck = userCheckService.login(userName,userPwd);//可通过账号 邮箱 电话 登录
+
+        request.getSession().setAttribute("user",userCheck);//设置session user
+
+        return "public/home";
+    }
 }
