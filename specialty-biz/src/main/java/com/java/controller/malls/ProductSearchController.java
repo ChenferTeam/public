@@ -1,4 +1,4 @@
-package com.java.controller.person;
+package com.java.controller.malls;
 
 import com.java.model.ProductSearch;
 import com.java.service.service.ProductSearchService;

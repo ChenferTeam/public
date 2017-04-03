@@ -26,6 +26,6 @@ public interface UserCheckMapper {
      * @param userPwd
      * @return
      */
-    UserCheck login(@Param("userName") String userName,@Param("userPwd")String userPwd);
+    UserCheck login(@Param("userName") String userName, @Param("userPwd") String userPwd);
 
 }

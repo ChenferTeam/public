@@ -51,4 +51,12 @@ public class UserCheckController {
 
         return "public/home";
     }
+    //注销
+    @RequestMapping(value = {"/exit"})
+    public String exit(HttpServletRequest request, HttpServletResponse response){
+
+       request.getSession().invalidate();//清空session
+
+        return "person/login";
+    }
 }

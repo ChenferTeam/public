@@ -29,5 +29,5 @@ public interface UserCheckService {
      * @param userPwd
      * @return
      */
-    UserCheck login(String userName,String userPwd);
+    UserCheck login(String userName, String userPwd);
 }

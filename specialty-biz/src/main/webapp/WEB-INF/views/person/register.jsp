@@ -27,13 +27,11 @@
 
 <body>
 
-<div class="login-boxtitle">
-    <a href="home/demo.html"><img alt="" src="../images/logobig.png" /></a>
-</div>
+<jsp:include page="common/header-logo.jsp"/>
 
 <div class="res-banner">
     <div class="res-main">
-        <div class="login-banner-bg"><span></span><img src="/images/big.jpg" /></div>
+        <jsp:include page="common/content-back.jsp"/>
         <div class="login-box">
 
             <div class="am-tabs" id="doc-my-tabs">

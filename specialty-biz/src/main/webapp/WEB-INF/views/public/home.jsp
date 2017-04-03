@@ -35,18 +35,19 @@
             <div class="topMessage">
                 <div class="menu-hd">
                     <c:if test="${empty user}">
-                        <a href="/user/to_login" target="_top" class="h">亲，请登录</a>
+                        <a href="/user/to_login" target="_top" class="h">亲，请登录</a> |
                         <a href="/user/to_register" target="_top">免费注册</a>
                     </c:if>
                     <c:if test="${!empty user}">
-                        <a href="#" target="_top" class="h">欢迎你！亲：
-                            <label>
+                        <label>欢迎你！亲：
+                            <a href="#">
                                 <c:if test="${! empty user.user_name}">${user.user_name}</c:if>
-                                <c:if test="${empty user.user_name}">${user.user_id}</c:if>
-                                <c:if test="${! empty user.user_email}">|${user.user_email}</c:if>
-                                <c:if test="${! empty user.user_phone}">|${user.user_phone}</c:if>
-                            </label>
-                        </a>
+                                <c:if test="${empty user.user_name}">ID:${user.user_id}</c:if>
+                                <c:if test="${! empty user.user_email}">| ${user.user_email}</c:if>
+                                <c:if test="${! empty user.user_phone}">| ${user.user_phone}</c:if>
+                            </a>
+                        </label> |
+                        <a href="/user/exit">[ 注销 ]</a>
                     </c:if>
                 </div>
             </div>
@@ -2504,7 +2505,11 @@
 
 
 <!--菜单 -->
-<jsp:include page="common/right.jsp"/>
+<c:if test="${!empty user}">
+    <jsp:include page="common/right-bar.jsp"/>
+</c:if>
+
+
 <script type="text/javascript">
     if ($(window).width() &gt; 640) {
         function autoScroll(obj) {
