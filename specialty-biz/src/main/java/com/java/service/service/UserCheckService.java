@@ -1,6 +1,6 @@
 package com.java.service.service;
 
-import com.java.model.UserCheck;
+import com.java.model.user.UserCheck;
 
 import java.util.List;
 

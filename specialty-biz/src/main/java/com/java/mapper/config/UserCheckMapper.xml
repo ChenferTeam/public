@@ -4,12 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.java.mapper.mapper.UserCheckMapper">
 
-    <insert id="add" parameterType="com.java.model.UserCheck">
-        insert into t_user_check (id,user_name,user_id,user_pwd,user_email,user_phone)
+    <insert id="add" parameterType="com.java.model.user.UserCheck">
+        insert into user_check (id,user_name,user_id,user_pwd,user_email,user_phone)
         VALUE (#{id},#{user_name},#{user_id},#{user_pwd},#{user_email},#{user_phone})
     </insert>
-    <select id="find" resultType="com.java.model.UserCheck" parameterType="com.java.model.UserCheck">
-        select * from t_user_check where 1=1
+    <select id="find" resultType="com.java.model.user.UserCheck" parameterType="com.java.model.user.UserCheck">
+        select * from user_check where 1=1
         <if test="id != null and id !='' ">
             and id =#{id}
         </if>
@@ -29,8 +29,8 @@
             and user_phone =#{user_phone}
         </if>
     </select>
-    <select id="login" resultType="com.java.model.UserCheck">
-         select * from t_user_check where 1=1
+    <select id="login" resultType="com.java.model.user.UserCheck">
+         select * from user_check where 1=1
          and (user_id=#{userName} or user_email=#{userName} or user_phone=#{userName})
          and user_pwd = #{userPwd}
     </select>

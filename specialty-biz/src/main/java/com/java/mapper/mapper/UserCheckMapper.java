@@ -1,6 +1,6 @@
 package com.java.mapper.mapper;
 
-import com.java.model.UserCheck;
+import com.java.model.user.UserCheck;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

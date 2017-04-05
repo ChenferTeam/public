@@ -1,6 +1,6 @@
 package com.java.controller.person;
 
-import com.java.model.UserCheck;
+import com.java.model.user.UserCheck;
 import com.java.service.service.UserCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

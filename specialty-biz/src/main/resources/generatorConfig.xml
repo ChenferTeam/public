@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <!-- 数据库驱动-->
-    <classPathEntry  location= "C:\Users\Chenfer\Downloads\mysql-connector-java-5.1.30\mysql-connector-java-5.1.30-bin.jar" />
+    <classPathEntry  location= "E:\mysql-connector-java-5.1.30-bin.jar" />
     <context id="DB2Tables"  targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="true"/>
@@ -15,8 +15,8 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="com.java.mapper.domain" targetProject="src/main/java">
+        <!--&lt;!&ndash; 生成模型的包名和位置&ndash;&gt;-->
+        <javaModelGenerator targetPackage="com.java.model.order" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -29,7 +29,20 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 -->
-        <table tableName="t_user_check"></table>
-        <table tableName="t_product_search"></table>
+       <!-- <table tableName="t_user_check"></table>
+        <table tableName="t_product_search"></table>-->
+
+        <!--<table tableName="product"></table>
+        <table tableName="product_attr"></table>
+        <table tableName="product_attr_param"></table>
+        <table tableName="product_detail"></table>
+        <table tableName="product_img"></table>
+        <table tableName="product_operating"></table>
+        <table tableName="product_type"></table>-->
+
+       <!-- <table tableName="order"></table>
+        <table tableName="order_attr_param"></table>-->
+
+
     </context>
 </generatorConfiguration>

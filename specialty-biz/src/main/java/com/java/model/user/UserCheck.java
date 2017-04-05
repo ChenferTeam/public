@@ -1,4 +1,4 @@
-package com.java.model;
+package com.java.model.user;
 
 /**
  * Created by Chenfer on 2017/3/26.

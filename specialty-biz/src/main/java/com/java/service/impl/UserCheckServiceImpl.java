@@ -1,7 +1,7 @@
 package com.java.service.impl;
 
 import com.java.mapper.mapper.UserCheckMapper;
-import com.java.model.UserCheck;
+import com.java.model.user.UserCheck;
 import com.java.service.service.UserCheckService;
 import com.java.util.string.Generate;
 import org.springframework.beans.factory.annotation.Autowired;
