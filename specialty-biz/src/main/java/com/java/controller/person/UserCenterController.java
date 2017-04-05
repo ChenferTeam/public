@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/user/center")
 public class UserCenterController {
+    //跳转个人中心
     @RequestMapping(value = {"","/{userId}"})
     public String toUserCenter(HttpServletRequest request){
         UserCheck userCheck = (UserCheck) request.getSession().getAttribute("user");
