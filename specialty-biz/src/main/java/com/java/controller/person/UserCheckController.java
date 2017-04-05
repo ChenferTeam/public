@@ -2,6 +2,7 @@ package com.java.controller.person;
 
 import com.java.model.user.UserCheck;
 import com.java.service.service.UserCheckService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,10 +47,13 @@ public class UserCheckController {
     public String login(String userName,String userPwd, Model model, HttpServletRequest request, HttpServletResponse response){
 
         UserCheck userCheck = userCheckService.login(userName,userPwd);//可通过账号 邮箱 电话 登录
+        if(userCheck!=null){
+            request.getSession().setAttribute("user",userCheck);//设置session user
+            return "public/home";
+        }else
+            return "person/login";
 
-        request.getSession().setAttribute("user",userCheck);//设置session user
 
-        return "public/home";
     }
     //注销
     @RequestMapping(value = {"/exit"})

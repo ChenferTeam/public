@@ -4,7 +4,10 @@ import com.java.mapper.mapper.UserCheckMapper;
 import com.java.model.user.UserCheck;
 import com.java.service.service.UserCheckService;
 import com.java.util.string.Generate;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +33,6 @@ public class UserCheckServiceImpl implements UserCheckService {
     public List<UserCheck> find(UserCheck userCheck){
         return userCheckMapper.find(userCheck);
     }
-
     /**
      * 注册
      * @param userCheck
@@ -46,6 +48,7 @@ public class UserCheckServiceImpl implements UserCheckService {
      * @param userPwd
      * @return
      */
+
     public UserCheck login(String userName,String userPwd){
         return userCheckMapper.login(userName,userPwd);
     }

@@ -16,7 +16,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--&lt;!&ndash; 生成模型的包名和位置&ndash;&gt;-->
-        <javaModelGenerator targetPackage="com.java.model.order" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.java.model.product" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -32,15 +32,15 @@
        <!-- <table tableName="t_user_check"></table>
         <table tableName="t_product_search"></table>-->
 
-        <!--<table tableName="product"></table>
+        <table tableName="product"></table>
         <table tableName="product_attr"></table>
         <table tableName="product_attr_param"></table>
         <table tableName="product_detail"></table>
         <table tableName="product_img"></table>
         <table tableName="product_operating"></table>
-        <table tableName="product_type"></table>-->
+        <table tableName="product_type"></table>
 
-       <!-- <table tableName="order"></table>
+       <!--<table tableName="order"></table>
         <table tableName="order_attr_param"></table>-->
 
 

@@ -3,6 +3,7 @@ package com.java.service.impl;
 import com.java.mapper.mapper.ProductSearchMapper;
 import com.java.model.ProductSearch;
 import com.java.service.service.ProductSearchService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

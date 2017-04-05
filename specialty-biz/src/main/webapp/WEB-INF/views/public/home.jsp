@@ -30,49 +30,10 @@
 <body>
 <div class="hmtop">
     <!--顶部导航条 -->
-    <div class="am-container header">
-        <ul class="message-l">
-            <div class="topMessage">
-                <div class="menu-hd">
-                    <c:if test="${empty user}">
-                        <a href="/user/to_login" target="_top" class="h">亲，请登录</a> |
-                        <a href="/user/to_register" target="_top">免费注册</a>
-                    </c:if>
-                    <c:if test="${!empty user}">
-                        <label>欢迎你！亲：
-                            <a href="#">
-                                <c:if test="${! empty user.user_name}">${user.user_name}</c:if>
-                                <c:if test="${empty user.user_name}">ID:${user.user_id}</c:if>
-                                <c:if test="${! empty user.user_email}">| ${user.user_email}</c:if>
-                                <c:if test="${! empty user.user_phone}">| ${user.user_phone}</c:if>
-                            </a>
-                        </label> |
-                        <a href="/user/exit">[ 注销 ]</a>
-                    </c:if>
-                </div>
-            </div>
-        </ul>
-
-    </div>
+    <jsp:include page="common/header-info.jsp"/>
 
     <!--悬浮搜索框-->
-
-    <div class="nav white">
-        <div class="logo"><img src="/images/logo.png" /></div>
-        <div class="logoBig">
-            <li><img src="/images/logobig.png" /></li>
-        </div>
-
-        <div class="search-bar pr">
-            <a name="index_none_header_sysc" href="#"></a>
-            <form>
-                <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-            </form>
-        </div>
-    </div>
-
-    <div class="clear"></div>
+    <jsp:include page="common/header-search.jsp"/>
 </div>
 <b class="line"></b>
 <div class="shopNav">
@@ -994,7 +955,7 @@
                 </a>
             </div>
             <div class="am-u-sm-3">
-                <a href="#"><img src="/images/mansmall.jpg" />
+                <a href="/user/center/${user.user_id}"><img src="/images/mansmall.jpg" />
                     <div class="title">个人中心</div>
                 </a>
             </div>
@@ -2504,11 +2465,12 @@
 </div>
 
 
-<!--菜单 -->
+<!--菜单-->
 <c:if test="${!empty user}">
     <jsp:include page="common/right-bar.jsp"/>
 </c:if>
-
+<!--引导-->
+<jsp:include page="common/footer-nav.jsp"/>
 
 <script type="text/javascript">
     if ($(window).width() &gt; 640) {
